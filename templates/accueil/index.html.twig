@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccuielTP1{% endblock %}
+
+{% block body %}
+
+
+
+<p>bonjour<p>
+<P>1- l'abstract controller - La classe AbstractController va nous fournir des méthodes auxiliaires
+un template facilement, ou d'effectuer une redirection ou encore de gérer des erreurs - Cela se fait grâce au mot-clé extends AbstractController
+ accéder à l'ensemble des propriétés et méthodes cela réfère au principe d'héritages en programmation orientée objet <p>
+
+<p> 
+2 L’objet Request - Il s’agit en fait d’un objet instancié à partir de la classe Request - Pour utiliser l’objet Request dans une action, 
+il est nécessaire de transmettre cet objet dans les paramètres de l’action. - 
+pour récupérer le nom de la requête, il est possible d’utiliser la méthode getPathInfo() <p>
+
+<p> 3 L’objet Response - L’objet Response définit la réponse à envoyer au navigateur client - 
+il faut l’instancier à l’intérieur de l’action du contrôleur
+{ 
+    /** 
+     * @Route("/test", name="test") 
+     */ 
+    public function index(Request $request) 
+    { 
+         
+        $reponse=new Response('Bienvenue dans Symfony');  
+        return $reponse;  
+    } 
+} 
+L’action index() retourne la réponse, qui suivra son cours pour être transformée en réponse HTTP <p>
+
+<p> 4 route - est un url gerer par des controleurs <p>
+
+
+<p> 5 Le principe des block dans la twig comme en PHP POO, "extends" représente un héritage d'un autre fichier <p>
+
+<p> Les 2 fonctionnalités de Composer - Composer est un gestionnaire de dépendances pour PHP -
+ gérer et intégrer des paquets ou des bibliothèques <p> 
+
+
+<p>
+1.	UserController.php : ce fichier contient la logique du contrôleur pour gérer toutes les opérations CRUD pour l'utilisateur. Il traite les demandes des utilisateurs et effectue des opérations telles que la création, la lecture, la mise à jour et la suppression d'utilisateurs.
+2.	UserType.php : ce fichier contient la définition d'un formulaire pour saisir les données d'un utilisateur. Il définit les champs du formulaire, les contraintes de validation, etc.
+3.	_delete_form.html.twig : ce fichier contient le formulaire pour supprimer un utilisateur. Il est inclus dans le fichier show.html.twig.
+4.	_form.html.twig : ce fichier contient le formulaire pour créer ou modifier un utilisateur. Il est inclus dans les fichiers new.html.twig et edit.html.twig.
+5.	edit.html.twig : ce fichier affiche le formulaire pour modifier un utilisateur. Il est utilisé pour afficher la page de modification d'un utilisateur.
+6.	index.html.twig : ce fichier affiche une liste de tous les utilisateurs dans le système. Il contient des liens pour afficher, modifier ou supprimer chaque utilisateur.
+7.	new.html.twig : ce fichier affiche le formulaire pour créer un nouvel utilisateur. Il est utilisé pour afficher la page de création d'un utilisateur.
+8.	show.html.twig : ce fichier affiche les détails d'un utilisateur spécifique, tels que le nom, l'adresse e-mail, la date de création, etc. Il contient également des liens pour modifier ou supprimer l'utilisateur.
+
+<p>
+
+
+
+{% endblock %}
